@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Shield</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 340px;
+      min-height: 400px;
+      background: #0f0f1a;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #2a2a3e;
+      position: relative;
+    }
+    .header h1 { font-size: 20px; font-weight: 700; color: #ffffff; margin-bottom: 4px; }
+    .header .subtitle { font-size: 11px; color: #888899; }
+    .settings-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .settings-icon:hover { opacity: 1; }
+    .status-section {
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #1a1a2e;
+    }
+    .status-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .status-dot.connected { background: #00d97e; box-shadow: 0 0 8px #00d97e55; }
+    .status-dot.disconnected { background: #ff4757; box-shadow: 0 0 8px #ff475755; }
+    .status-dot.checking { background: #ffc107; box-shadow: 0 0 8px #ffc10755; animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+    .status-text { font-size: 13px; line-height: 1.4; }
+    .status-text .label { font-weight: 600; display: block; }
+    .status-text .detail { font-size: 11px; color: #888899; }
+    .section { padding: 16px 20px; border-bottom: 1px solid #1a1a2e; }
+    .section-title { font-size: 12px; font-weight: 600; text-transform: uppercase; color: #888899; margin-bottom: 10px; }
+    .btn { padding: 8px 16px; border: none; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .btn-scan { width: 100%; padding: 12px; font-size: 14px; background: linear-gradient(135deg, #00d97e, #00b864); color: #0f0f1a; }
+    .btn-scan:hover { opacity: 0.9; }
+    .btn-scan:disabled { opacity: 0.4; cursor: not-allowed; background: #333; color: #666; }
+    .last-result { padding: 12px; border-radius: 8px; margin-top: 8px; font-size: 12px; line-height: 1.5; }
+    .last-result.safe { background: rgba(0, 217, 126, 0.1); border: 1px solid #00d97e33; }
+    .last-result.warning { background: rgba(255, 193, 7, 0.1); border: 1px solid #ffc10733; }
+    .last-result.danger { background: rgba(255, 71, 87, 0.1); border: 1px solid #ff475733; }
+    .last-result.none { background: #1a1a2e; border: 1px solid #2a2a3e; color: #888899; }
+    .footer { padding: 12px 20px; text-align: center; font-size: 10px; color: #555566; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🛡️ AI Shield</h1>
+    <p class="subtitle">Personal AI Security Agent</p>
+    <svg class="settings-icon" id="settingsBtn" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+  </div>
+
+  <div class="status-section" id="statusSection">
+    <div class="status-dot checking" id="statusDot"></div>
+    <div class="status-text">
+      <span class="label" id="statusLabel">Checking server...</span>
+      <span class="detail" id="statusDetail">Connecting to API</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📧 Email Scanner</div>
+    <button class="btn btn-scan" id="scanBtn" disabled>
+      🔍 Scan Current Email
+    </button>
+    <div class="last-result none" id="lastResult">
+      No scans yet. Open an email and click scan.
+    </div>
+  </div>
+
+  <div class="footer">
+    AI Shield v2.0.0 • Open source • Cloud Edition
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

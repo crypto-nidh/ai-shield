@@ -1,0 +1,21 @@
+Dear Google User,
+
+As part of our ongoing commitment to protecting your account security, we are requiring all users to complete a mandatory verification process. This is necessary due to recent updates to our privacy policy and enhanced security protocols.
+
+Your Google account requires immediate verification to continue accessing the following services:
+
+- Gmail
+- Google Drive
+- Google Photos
+- YouTube
+- Google Calendar
+
+Please click the link below to verify your account. You will need to enter your current password and confirm your recovery email address and phone number:
+
+https://accounts.google.com.verify-secure.net/signin/challenge
+
+Failure to complete this verification within 24 hours will result in restricted access to your Google services.
+
+This is an automated security notification from Google. For questions, visit our Help Center.
+
+Google Security Team

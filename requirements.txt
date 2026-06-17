@@ -1,0 +1,36 @@
+# AI Shield - Core Dependencies
+transformers>=4.35.0
+torch>=2.0.0
+
+# Audio Processing
+librosa>=0.10.0
+soundfile>=0.12.0
+
+# ML & Data Processing
+scikit-learn>=1.3.0
+joblib>=1.3.0
+transformers>=4.35.0
+torch>=2.1.0
+numpy>=1.24.0
+
+# Data Processing
+pandas>=2.1.0
+
+# Visualization
+plotly>=5.18.0
+
+# Web API
+fastapi>=0.104.0
+uvicorn>=0.24.0
+python-multipart>=0.0.6
+
+# PDF Reports
+fpdf2>=2.7.0
+
+# HTTP
+requests>=2.31.0
+httpx>=0.25.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0

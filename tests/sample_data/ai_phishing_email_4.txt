@@ -1,0 +1,15 @@
+IMPORTANT NOTICE
+
+Dear Microsoft Account Holder,
+
+We are writing to inform you that your Microsoft 365 subscription has been flagged for termination due to a billing discrepancy in our records. Our automated systems have been unable to process your most recent payment, and as a result, your account is scheduled for permanent deletion within 48 hours.
+
+All your files stored in OneDrive, your Outlook emails, and your Microsoft Teams data will be permanently deleted and cannot be recovered once the termination process begins.
+
+To prevent the loss of your data and maintain your subscription, please update your payment information immediately by clicking the secure link below:
+
+https://microsoft365-billing-update.com/renew?user=jsmith2847
+
+Act now to avoid any disruption to your services. This is your final notice.
+
+Microsoft Account Services

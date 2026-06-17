@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "AI Shield — Gmail Phishing Protector",
+  "version": "1.0.0",
+  "description": "Automatically scans Gmail emails for AI-generated phishing attacks. Shows visual warnings when threats are detected.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*",
+    "https://*.onrender.com/*",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["shield.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI Shield"
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

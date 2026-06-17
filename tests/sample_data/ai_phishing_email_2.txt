@@ -1,0 +1,15 @@
+Dear Valued Customer,
+
+We have detected unusual activity on your Bank of America account that requires your immediate attention. Our security systems have flagged multiple unauthorized login attempts from an unrecognized device located in Eastern Europe.
+
+To protect your account and prevent any unauthorized transactions, we have temporarily limited your account access. To restore full access to your account, you must verify your identity within the next 24 hours by clicking the link below:
+
+https://bankofamerica-secure-verify.com/account/verify?id=8829371
+
+If you do not verify your identity within 24 hours, your account will be permanently suspended for security purposes. Please ensure you have your account number, Social Security Number, and date of birth ready for verification.
+
+Thank you for your prompt attention to this matter.
+
+Sincerely,
+Bank of America Security Team
+This is an automated message. Please do not reply directly.

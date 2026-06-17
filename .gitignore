@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+eggs/
+*.egg
+.eggs/
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+
+# AI Shield data (user-specific, privacy-sensitive)
+# These contain scan history, email snippets, and cached models
+*.db
+voice_baseline.joblib
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Test artifacts
+*.wav
+*.mp3
+*.pdf
+htmlcov/
+.coverage
+.pytest_cache/
+
+# Distribution
+*.tar.gz
+*.whl

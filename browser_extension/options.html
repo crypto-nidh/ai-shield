@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AI Shield - Options</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f5f5f7;
+      color: #1d1d1f;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    h1 { margin-top: 0; }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #d2d2d7;
+      border-radius: 8px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0077ed;
+    }
+    .status {
+      margin-top: 1rem;
+      color: #34c759;
+      font-weight: 500;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AI Shield Settings</h1>
+    
+    <div class="form-group">
+      <label for="api-url">API Base URL</label>
+      <input type="text" id="api-url" placeholder="https://ai-shield-backend.onrender.com">
+      <p style="color: #86868b; font-size: 0.85rem; margin-top: 0.5rem;">
+        The URL of your hosted Render backend (or localhost for development). Do not include a trailing slash.
+      </p>
+    </div>
+    
+    <button id="save-btn">Save Settings</button>
+    <div id="status" class="status">Settings saved successfully!</div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

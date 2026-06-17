@@ -1,0 +1,12 @@
+Happy Friday! 🎉
+
+Here's what caught our eye this week:
+
+1. Python 3.13 is officially out with some neat performance improvements. The free-threading stuff is still experimental but looking promising.
+
+2. GitHub rolled out a new code review feature that honestly makes the old one look like it was from 2005. Worth checking out if you haven't already.
+
+3. Interesting blog post from the VS Code team about how they handle extension performance. Link's in the full article.
+
+Have a great weekend!
+- The DevWeekly Team
