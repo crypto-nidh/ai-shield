@@ -31,7 +31,7 @@ VERSION = "2.0.0"
 
 # Input limits
 MAX_TEXT_LENGTH = 50_000
-MAX_FILE_SIZE = 50 * 1024 * 1024  # 50 MB
+MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
 
 # ─── In-Memory State ─────────────────────────────────────────────────────────
 # Note: On Render free tier, these will reset after 15 minutes of inactivity.
