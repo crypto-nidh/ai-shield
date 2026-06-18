@@ -91,8 +91,9 @@ def _extract_features(audio_path: str) -> dict[str, Any]:
     """
     import librosa
 
-    # Load only the first 10 seconds of audio to prevent OOM on Render free tier
-    y, sr = librosa.load(audio_path, sr=22050, mono=True, duration=10.0)
+    # Load audio file (mono, 22050 Hz sample rate)
+    # Limit to 15 seconds to prevent OOM and timeouts on 512MB Render free tier
+    y, sr = librosa.load(audio_path, sr=22050, mono=True, duration=15.0)
 
     # Duration check — need at least 1 second
     duration = librosa.get_duration(y=y, sr=sr)
