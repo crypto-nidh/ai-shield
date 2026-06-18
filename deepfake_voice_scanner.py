@@ -522,6 +522,7 @@ def scan_audio(file_path: str) -> dict[str, Any]:
         "explanation": explanation,
         "artifacts_found": artifacts,
         "error": False,
+        "method_used": "Heuristics + IsolationForest",
         "details": {
             "heuristic_score": float(round(heuristic_score, 1)),
             "anomaly_score": float(round(anomaly_score, 1)),
